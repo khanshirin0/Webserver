@@ -1,0 +1,62 @@
+1. Install and Configure Red Hat-based Web Server:
+
+Install Red Hat Linux:
+
+Install the Red Hat-based Linux distribution on your server. During installation, select the appropriate options, such as web server packages, to ensure necessary components are installed.
+
+2. User Accounts and Permissions:
+
+Create User Accounts:
+Use the useradd command to create user accounts. For example:
+sudo useradd username
+
+Set Passwords:
+Set passwords for the created users using the passwd command:
+sudo passwd username
+
+Manage Permissions:
+Use the chmod and chown commands to manage file and directory permissions. For example, to change permissions of a directory:
+sudo chmod 755 /path/to/directory
+
+3. Install and Secure Apache Web Server:
+
+Install Apache:
+Use the package manager (dnf on recent Red Hat-based systems) to install Apache:
+sudo dnf install httpd
+
+Start and Enable Apache:
+Start the Apache service and enable it to start on boot:
+sudo systemctl start httpd
+sudo systemctl enable httpd
+
+Secure Apache:
+Secure Apache by disabling directory listing and enabling the firewall:
+sudo echo "Options -Indexes" >> /etc/httpd/conf/httpd.conf
+sudo firewall-cmd --permanent --add-service=http
+sudo firewall-cmd --reload
+
+4. Deploy Basic Website:
+
+Create Website Directory:
+Create a directory to store your website files:
+sudo mkdir /var/www/html/mywebsite
+
+Create Sample HTML File:
+Create a sample index.html file inside the website directory:
+sudo nano /var/www/html/mywebsite/index.html
+Add some HTML content to the file.
+
+Set Permissions:
+Ensure the web server has permissions to read the files:
+sudo chown -R apache:apache /var/www/html/mywebsite
+
+5. Monitor Server Performance:
+
+Use Monitoring Tools:
+Utilize tools like top, htop, or netdata to monitor server performance, including CPU, memory, and network usage.
+
+Set Up Log Monitoring:
+Configure log monitoring tools like logwatch or fail2ban to monitor Apache logs for security and performance issues.
+
+Implement Server Monitoring Solutions:
+Consider using server monitoring solutions like Nagios, Zabbix, or Prometheus to get comprehensive insights into your server's performance and health.
