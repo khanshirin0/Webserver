@@ -1,7 +1,6 @@
 1. Install and Configure Red Hat-based Web Server:
 
 Install Red Hat Linux:
-
 Install the Red Hat-based Linux distribution on your server. During installation, select the appropriate options, such as web server packages, to ensure necessary components are installed.
 
 2. User Accounts and Permissions:
